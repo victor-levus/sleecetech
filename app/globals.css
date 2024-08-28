@@ -42,3 +42,77 @@ body {
 .glassmorphism {
   @apply rounded-xl border border-gray-200 bg-white/20 shadow-[inset_10px_-50px_94px_0_rgb(199,199,199,0.2)] backdrop-blur p-5;
 }
+
+.app--button {
+  --color: ##00b050;
+  padding: 0.8em 1.7em;
+  background-color: transparent;
+  border-radius: 0.3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+}
+
+.app--button {
+  --color: #1ad102;
+  padding: 0.8em 1.7em;
+  background-color: transparent;
+  border-radius: 0.3em;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: inherit;
+  text-transform: uppercase;
+  color: var(--color);
+  z-index: 1;
+}
+
+.app--button::before,
+.app--button::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+}
+
+.app--button::before {
+  top: -1em;
+  left: -1em;
+}
+
+.app--button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+}
+
+.app--button:hover::before,
+.app--button:hover::after {
+  height: 410px;
+  width: 410px;
+}
+
+.app--button:hover {
+  color: #000066;
+}
+
+.app--button:active {
+  filter: brightness(0.8);
+}
