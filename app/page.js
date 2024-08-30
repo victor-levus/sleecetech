@@ -106,6 +106,79 @@ const Home = () => {
           ))}
         </div>
       </section>
+
+      {/* CONTACT US */}
+      <section className="contact--section p-5 mb-10">
+        <div className="mb-14">
+          <TitleHead>contact us</TitleHead>
+        </div>
+
+        <div className="flex flex-col md:flex-row justify-center gap-10 font-nanum">
+          <div className="bg-app-color2 bg-opacity-75 p-8 rounded-lg shadow-md flex-1 max-w-[500px]">
+            <h2 className="text-2xl font-bold text-white mb-6">
+              Send us a Message
+            </h2>
+
+            <form>
+              <div className="mb-8">
+                <label
+                  className="block text-sm font-medium text-gray-300"
+                  htmlFor="name"
+                >
+                  Full Name
+                </label>
+                <input
+                  className="mt-1 p-2 w-full bg-app-color bg-opacity-30 border border-app-color border-opacity-45 rounded-md text-white"
+                  type="text"
+                />
+              </div>
+
+              <div className="mb-8">
+                <label
+                  className="block text-sm font-medium text-gray-300"
+                  htmlFor="email"
+                >
+                  Email Address
+                </label>
+                <input
+                  className="mt-1 p-2 w-full bg-app-color bg-opacity-30 border border-app-color border-opacity-45 rounded-md text-white"
+                  name="email"
+                  id="email"
+                  type="email"
+                />
+              </div>
+
+              <div className="mb-8">
+                <label
+                  className="block text-sm font-medium text-gray-300"
+                  htmlFor="message"
+                >
+                  Message
+                </label>
+                <textarea
+                  className="mt-1 p-2 w-full bg-app-color bg-opacity-30 border border-app-color border-opacity-45 rounded-md text-white"
+                  rows="3"
+                  name="message"
+                  id="message"
+                ></textarea>
+              </div>
+
+              <div className="flex justify-end">
+                <Button>Submit</Button>
+              </div>
+            </form>
+          </div>
+
+          <div className="flex-1 max-w-[700px] md:ml-20">
+            <img
+              src="https://unblast.com/wp-content/uploads/2020/09/Contact-Us-Vector-Illustration-Part-02-1.jpg"
+              alt="contact-image"
+              width={"100%"}
+              className="object-cover "
+            />
+          </div>
+        </div>
+      </section>
     </>
   );
 };
