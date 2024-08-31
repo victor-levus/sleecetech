@@ -5,8 +5,8 @@ import Navbar from "@/components/Navbar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "AI Prompt",
-  description: "AI powered prompts",
+  title: "Sleece Technologies",
+  description: "Sleece Technologies Company Portfolio",
 };
 
 export default function RootLayout({ children }) {
