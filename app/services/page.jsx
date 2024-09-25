@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
 import Image from "next/image";
+import ContactUsPage from "../contact-us/page";
+import HeaderText from "@/components/HeaderText";
 
 const services = [
 	{
@@ -85,9 +87,7 @@ export default function ServicesPage() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
 				>
-					<h1 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
-						Our Services
-					</h1>
+					<HeaderText>Our Services</HeaderText>
 					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
 						Discover our comprehensive range of IT solutions designed to empower
 						your business and drive innovation.
@@ -174,6 +174,8 @@ export default function ServicesPage() {
 					)}
 				</AnimatePresence>
 			</div>
+
+			<ContactUsPage />
 		</div>
 	);
 }

@@ -8,6 +8,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import HeaderText from "@/components/HeaderText";
 
 export default function ContactUsPage() {
 	const [formState, setFormState] = useState({
@@ -40,9 +41,7 @@ export default function ContactUsPage() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
 				>
-					<h1 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
-						Contact Us
-					</h1>
+					<HeaderText>Contact Us</HeaderText>
 					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
 						Get in touch with us for any inquiries or support. We're here to
 						help!

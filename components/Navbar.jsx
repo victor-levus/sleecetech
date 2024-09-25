@@ -60,48 +60,34 @@ export default Navbar;
 
 const MenuList = () => {
 	const path = usePathname();
+
+	const menuList = [
+		{ label: "About", href: "/about" },
+		{ label: "Services", href: "/services" },
+		{ label: "Our Team", href: "/teams" },
+		{ label: "Contact Us", href: "/contact-us" },
+		{ label: "Gallery", href: "/gallery" },
+	];
+
+	const linkStyle = `font-nanum text-lg font-extrabold hover:text-app-color ${
+		path === "/contact-us" ? "text-app-color" : "text-app-color2"
+	}`;
+
 	return (
 		<div className="mt-8 gap-5 flex flex-col mr-5 items-end md:flex-row ">
-			<Link
-				href="/about"
-				className={`font-nanum text-lg font-bold hover:text-app-color ${
-					path === "/about" ? "text-app-color" : "text-app-color2"
-				}`}
-			>
-				About
-			</Link>
-			<Link
-				href="/services"
-				className={`font-nanum text-lg font-bold hover:text-app-color ${
-					path === "/services" ? "text-app-color" : "text-app-color2"
-				}`}
-			>
-				Services
-			</Link>
-			<Link
-				href="/teams"
-				className={`font-nanum text-lg font-bold hover:text-app-color ${
-					path === "/teams" ? "text-app-color" : "text-app-color2"
-				}`}
-			>
-				Our Team
-			</Link>
-			<Link
-				href="/contact-us"
-				className={`font-nanum text-lg font-bold hover:text-app-color ${
-					path === "/contact-us" ? "text-app-color" : "text-app-color2"
-				}`}
-			>
-				Contact Us
-			</Link>
-			<Link
-				href="/gallery"
-				className={`font-nanum text-lg font-bold hover:text-app-color ${
-					path === "/gallery" ? "text-app-color" : "text-app-color2"
-				}`}
-			>
-				Gallery
-			</Link>
+			{menuList.map((ml) => (
+				<Link
+					key={ml.label}
+					href={ml.href}
+					className={`font-sourceSan text-lg hover:text-app-color ${
+						path === ml.href
+							? "text-app-color font-extrabold"
+							: "text-app-color2 font-semibold"
+					}`}
+				>
+					{ml.label}
+				</Link>
+			))}
 		</div>
 	);
 };

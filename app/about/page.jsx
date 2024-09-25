@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Award, Briefcase, Globe, Users, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import HeaderText from "@/components/HeaderText";
 
 const fadeIn = {
 	initial: { opacity: 0, y: 20 },
@@ -22,9 +23,7 @@ export default function About() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
 				>
-					<h1 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
-						About Sleece Technologies
-					</h1>
+					<HeaderText>About Sleece Technologies</HeaderText>
 					<p className="text-xl text-muted-foreground">
 						Innovating for a Connected Future
 					</p>

@@ -6,6 +6,8 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import Image from "next/image";
+import ContactUsPage from "../contact-us/page";
+import HeaderText from "@/components/HeaderText";
 
 const galleryItems = [
 	{
@@ -87,9 +89,7 @@ export default function GalleryPage() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
 				>
-					<h1 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
-						Our Project Gallery
-					</h1>
+					<HeaderText>Our Project Gallery</HeaderText>
 					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
 						Explore our innovative solutions and successful projects across
 						various technology domains.
@@ -202,6 +202,8 @@ export default function GalleryPage() {
 					)}
 				</AnimatePresence>
 			</div>
+
+			<ContactUsPage />
 		</div>
 	);
 }

@@ -5,7 +5,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { LinkedIn, Twitter, Mail } from "lucide-react";
+import { Linkedin, Twitter, Mail } from "lucide-react";
+import ContactUsPage from "../contact-us/page";
+import HeaderText from "@/components/HeaderText";
 
 const teamMembers = [
 	{
@@ -76,9 +78,7 @@ export default function OurTeamPage() {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.8 }}
 				>
-					<h1 className="text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-foreground">
-						Our Team
-					</h1>
+					<HeaderText>Our Teams</HeaderText>
 					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
 						Meet the talented individuals behind Sleece Technologies who are
 						dedicated to driving innovation and delivering exceptional IT
@@ -166,7 +166,7 @@ export default function OurTeamPage() {
 													rel="noopener noreferrer"
 													aria-label={`${selectedMember.name}'s LinkedIn`}
 												>
-													<LinkedIn className="h-4 w-4" />
+													<Linkedin className="h-4 w-4" />
 												</a>
 											</Button>
 											<Button variant="outline" size="icon" asChild>
@@ -195,6 +195,8 @@ export default function OurTeamPage() {
 					)}
 				</AnimatePresence>
 			</div>
+
+			<ContactUsPage />
 		</div>
 	);
 }
