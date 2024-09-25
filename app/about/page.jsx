@@ -46,8 +46,8 @@ export default function About() {
 						</p>
 						<p className="text-lg mb-6 leading-relaxed">
 							Today, we're proud to be a leading force in the tech industry,
-							delivering cutting-edge software and hardware solutions to clients
-							worldwide.
+							&apos; delivering cutting-edge software and hardware solutions to
+							&apos; clients worldwide.
 						</p>
 						<Button size="lg" className="group">
 							Learn More
@@ -154,8 +154,8 @@ export default function About() {
 					<h2 className="text-3xl font-semibold mb-6">Join Our Team</h2>
 					<p className="text-lg mb-8 max-w-2xl mx-auto">
 						We're always looking for talented individuals to join our innovative
-						team. If you're passionate about technology and want to make a
-						difference, we'd love to hear from you.
+						&apos; team. If you're passionate about technology and want to make
+						a &apos; difference, we'd love to hear from you.
 					</p>
 					<Button size="lg" variant="secondary" className="group">
 						View Open Positions
@@ -173,8 +173,8 @@ export default function About() {
 					<h2 className="text-3xl font-semibold mb-6">Get in Touch</h2>
 					<p className="text-lg mb-8 max-w-2xl mx-auto">
 						Interested in learning more about how Sleece Technologies can help
-						your business? Let's start a conversation and explore the
-						possibilities together.
+						&apos; your business? Let's start a conversation and explore the
+						&apos; possibilities together.
 					</p>
 					<Link href="/contact-us">
 						<Button size="lg" variant="default" className="group">

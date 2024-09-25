@@ -98,9 +98,8 @@ export default function GalleryPage() {
 
 				<div className="flex justify-center flex-wrap gap-4 mb-8">
 					{categories.map((category, index) => (
-						<span>
+						<span key={index}>
 							<Button
-								key={index}
 								variant={filter === category ? "default" : "outline"}
 								onClick={() => setFilter(category)}
 							>
