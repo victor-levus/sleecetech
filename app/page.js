@@ -2,7 +2,8 @@ import TitleHead from "../components/TitleHead";
 import Card from "../components/Card";
 import Button from "../components/Button";
 
-import { servicesData } from "../data/index";
+import { expertiseData, servicesData } from "../data/index";
+import Footer from "../components/Footer";
 
 export const metadata = {
   title: "Sleece Technologies HomePage",
@@ -93,12 +94,12 @@ const Home = () => {
       </section>
 
       {/* SERVICES SECTION */}
-      <section className="p-5 my-20 bg-app-color2 bg-opacity-10 md:h-[700px]">
+      <section className="px-5 pt-10 pb-5 bg-app-color2 bg-opacity-10">
         <div className="my-10">
           <TitleHead>What We Do</TitleHead>
         </div>
 
-        <div className="flex flex-col items-center overflow-hidden md:flex-row gap-4 md:overflow-x-scroll">
+        <div className="flex flex-col items-center overflow-hidden md:flex-row gap-4 md:overflow-x-scroll mb-">
           {servicesData.map((sd, i) => (
             <div key={i} className="max-w-[500px] mb-5">
               <Card image={sd.image} title={sd.title} subTitle={sd.subTitle} />
@@ -107,14 +108,41 @@ const Home = () => {
         </div>
       </section>
 
+      {/* WHY CHOOSE US */}
+      <section className="why-choose-us pb-10 px-5">
+        <div className="my-10">
+          <TitleHead>why choose us</TitleHead>
+        </div>
+
+        <div className="flex flex-wrap gap-5 justify-center">
+          {expertiseData.map((ed, i) => (
+            <div
+              key={ed.title + i}
+              className="why-choose-us-card border-gray-500 border-2 md:max-w-[600px] p-3 flex flex-col md:flex-row justify-center gap-10 md:gap-5 rounded-md"
+            >
+              <div className="md:w-1/2">
+                <h2 className="font-ptSans text-app-color2 mb-3 text-2xl">
+                  {ed.title}
+                </h2>
+                <p className="font-sourceSan text-gray-600 ">{ed.subTitle}</p>
+              </div>
+
+              <div className="md:flex md:items-center md:w-1/2">
+                <img src={ed.image} alt="expertise" width={"100%"} />
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* CONTACT US */}
-      <section className="contact--section p-5 mb-10">
+      <section className="contact--section p-5 my-10">
         <div className="mb-14">
           <TitleHead>contact us</TitleHead>
         </div>
 
-        <div className="flex flex-col md:flex-row justify-center gap-10 font-nanum">
-          <div className="bg-app-color2 bg-opacity-75 p-8 rounded-lg shadow-md flex-1 max-w-[500px]">
+        <div className="flex flex-col md:flex-row justify-center items-stretch gap-10 font-nanum">
+          <div className="bg-app-color2 bg-opacity-75 p-8 rounded-lg shadow-md flex-1 w-full md:max-w-[500px]">
             <h2 className="text-2xl font-bold text-white mb-6">
               Send us a Message
             </h2>
@@ -178,6 +206,11 @@ const Home = () => {
             />
           </div>
         </div>
+      </section>
+
+      {/* FOOTER */}
+      <section>
+        <Footer />
       </section>
     </>
   );

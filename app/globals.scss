@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Nanum+Gothic&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap");
-@import "../styles/button.css";
+@import "../styles/Variables.scss";
+@import "../styles/button.scss";
+@import "../styles/Footer.scss";
 
 @tailwind base;
 @tailwind components;
@@ -49,4 +51,7 @@ body {
 
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.why-choose-us-card {
 }

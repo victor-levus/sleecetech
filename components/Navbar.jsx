@@ -54,7 +54,7 @@ export default Navbar;
 
 const MenuList = () => {
   return (
-    <div className="mt-8 gap-5 flex flex-col mr-5 items-end md:flex-row ">
+    <div className="mt-8 gap-5 flex flex-col mr-5 items-end md:flex-row">
       <Link
         onClick={() => setMenuActive(false)}
         href="/about"
