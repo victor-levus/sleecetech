@@ -153,9 +153,9 @@ export default function About() {
 				>
 					<h2 className="text-3xl font-semibold mb-6">Join Our Team</h2>
 					<p className="text-lg mb-8 max-w-2xl mx-auto">
-						We're always looking for talented individuals to join our innovative
-						&apos; team. If you're passionate about technology and want to make
-						a &apos; difference, we'd love to hear from you.
+						We are always looking for talented individuals to join our
+						innovative team. If you are passionate about technology and want to
+						make a difference, we did love to hear from you.
 					</p>
 					<Button size="lg" variant="secondary" className="group">
 						View Open Positions
@@ -173,8 +173,8 @@ export default function About() {
 					<h2 className="text-3xl font-semibold mb-6">Get in Touch</h2>
 					<p className="text-lg mb-8 max-w-2xl mx-auto">
 						Interested in learning more about how Sleece Technologies can help
-						&apos; your business? Let's start a conversation and explore the
-						&apos; possibilities together.
+						your business? Let start a conversation and explore the
+						possibilities together.
 					</p>
 					<Link href="/contact-us">
 						<Button size="lg" variant="default" className="group">

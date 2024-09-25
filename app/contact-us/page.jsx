@@ -43,8 +43,8 @@ export default function ContactUsPage() {
 				>
 					<HeaderText>Contact Us</HeaderText>
 					<p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-						Get in touch with us for any inquiries or support. We're here to
-						&apos; help!
+						Get in touch with us for any inquiries or support. We are here to
+						help!
 					</p>
 				</motion.header>
 
