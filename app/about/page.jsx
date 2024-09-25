@@ -6,6 +6,7 @@ import { Award, Briefcase, Globe, Users, ChevronRight } from "lucide-react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import HeaderText from "@/components/HeaderText";
+import Link from "next/link";
 
 const fadeIn = {
 	initial: { opacity: 0, y: 20 },
@@ -175,10 +176,12 @@ export default function About() {
 						your business? Let's start a conversation and explore the
 						possibilities together.
 					</p>
-					<Button size="lg" variant="default" className="group">
-						Contact Us
-						<ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-					</Button>
+					<Link href="/contact-us">
+						<Button size="lg" variant="default" className="group">
+							Contact Us
+							<ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+						</Button>
+					</Link>
 				</motion.section>
 			</div>
 		</div>

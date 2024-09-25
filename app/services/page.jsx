@@ -8,6 +8,7 @@ import { ChevronRight } from "lucide-react";
 import Image from "next/image";
 import ContactUsPage from "../contact-us/page";
 import HeaderText from "@/components/HeaderText";
+import Link from "next/link";
 
 const services = [
 	{
@@ -164,10 +165,12 @@ export default function ServicesPage() {
 									<p className="text-muted-foreground mb-6">
 										{selectedService.subTitle}
 									</p>
-									<Button className="w-full group">
-										Request a Consultation
-										<ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-									</Button>
+									<Link href="/contact-us">
+										<Button className="w-full group">
+											Request a Consultation
+											<ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+										</Button>
+									</Link>
 								</div>
 							</motion.div>
 						</motion.div>

@@ -96,6 +96,7 @@ export default function ContactUsPage() {
 										<Textarea
 											id="message"
 											name="message"
+											rows={7}
 											value={formState.message}
 											onChange={handleInputChange}
 											required
