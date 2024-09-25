@@ -19,7 +19,7 @@ const Home = () => {
 				<header className="h-[700px] md:h-[500px] flex flex-col md:flex-row gap-10 justify-center items-center container">
 					<div className="md:ml-10">
 						<article className="font-sourceSan text-4xl md:text-5xl md:w-[400px] md:text-left font-bold mb-10">
-							Your Trusted Technology Partner
+							Your Trusted Technology Partner!!
 						</article>
 						<p className="font-satoshi text-lg font-bold mb-10">
 							Delivering Innovative IT Solutions to Drive Business Success
