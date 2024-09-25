@@ -42,12 +42,12 @@ export default function About() {
 						<p className="text-lg mb-4 leading-relaxed">
 							Founded in 2015, Sleece Technologies has been at the forefront of
 							technological innovation. Our journey began with a simple idea: to
-							create solutions that make a difference in people's lives.
+							create solutions that make a difference in peoples lives.
 						</p>
 						<p className="text-lg mb-6 leading-relaxed">
-							Today, we're proud to be a leading force in the tech industry,
-							&apos; delivering cutting-edge software and hardware solutions to
-							&apos; clients worldwide.
+							Today, we are proud to be a leading force in the tech industry,
+							delivering cutting-edge software and hardware solutions to clients
+							worldwide.
 						</p>
 						<Button size="lg" className="group">
 							Learn More
