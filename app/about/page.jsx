@@ -7,6 +7,9 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import HeaderText from "@/components/HeaderText";
 import Link from "next/link";
+import ContactUsPage from "../contact-us/page";
+import { expertiseData } from "@/data";
+import TitleHead from "@/components/TitleHead";
 
 const fadeIn = {
 	initial: { opacity: 0, y: 20 },
@@ -40,7 +43,7 @@ export default function About() {
 					<div>
 						<h2 className="text-3xl font-semibold mb-6">Our Story</h2>
 						<p className="text-lg mb-4 leading-relaxed">
-							Founded in 2015, Sleece Technologies has been at the forefront of
+							Founded in 2019, Sleece Technologies has been at the forefront of
 							technological innovation. Our journey began with a simple idea: to
 							create solutions that make a difference in peoples lives.
 						</p>
@@ -151,6 +154,42 @@ export default function About() {
 					whileInView="animate"
 					viewport={{ once: true }}
 				>
+					<section className="why-choose-us pb-10 px-5">
+						<div className="my-10">
+							<TitleHead>why choose us</TitleHead>
+						</div>
+
+						<div className="flex flex-wrap gap-5 justify-center">
+							{expertiseData.map((ed, i) => (
+								<div
+									key={ed.title + i}
+									className="why-choose-us-card border-gray-500 border-2 md:max-w-[600px] p-3 flex flex-col md:flex-row justify-center gap-10 md:gap-5 rounded-md"
+								>
+									<div className="md:w-1/2">
+										<h2 className="font-ptSans text-app-color2 mb-3 text-2xl">
+											{ed.title}
+										</h2>
+										<p className="font-sourceSan text-gray-600 ">
+											{ed.subTitle}
+										</p>
+									</div>
+
+									<div className="md:flex md:items-center md:w-1/2">
+										<img src={ed.image} alt="expertise" width={"100%"} />
+									</div>
+								</div>
+							))}
+						</div>
+					</section>
+				</motion.section>
+
+				<motion.section
+					className="text-center mb-24"
+					variants={fadeIn}
+					initial="initial"
+					whileInView="animate"
+					viewport={{ once: true }}
+				>
 					<h2 className="text-3xl font-semibold mb-6">Join Our Team</h2>
 					<p className="text-lg mb-8 max-w-2xl mx-auto">
 						We are always looking for talented individuals to join our
@@ -184,6 +223,8 @@ export default function About() {
 					</Link>
 				</motion.section>
 			</div>
+
+			<ContactUsPage />
 		</div>
 	);
 }
