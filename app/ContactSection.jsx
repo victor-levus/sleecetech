@@ -59,8 +59,6 @@ const ContactSection = () => {
 		}
 	};
 
-	console.log("env: ", process.env.BACKEND_URL);
-
 	return (
 		<section className="contact--section p-5 my-10">
 			<div className="mb-14">
