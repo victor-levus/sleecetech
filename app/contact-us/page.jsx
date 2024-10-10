@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import axios from "axios";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -11,6 +12,8 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import HeaderText from "@/components/HeaderText";
 
 export default function ContactUsPage() {
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [error, setError] = useState(false);
 	const [formState, setFormState] = useState({
 		name: "",
 		email: "",
@@ -23,13 +26,22 @@ export default function ContactUsPage() {
 		setFormState((prev) => ({ ...prev, [name]: value }));
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		// Here you would typically send the form data to your backend
-		console.log("Form submitted:", formState);
-		// Reset form after submission
-		setFormState({ name: "", email: "", subject: "", message: "" });
-		// You might also want to show a success message to the user
+		try {
+			// Here you would typically send the form data to your backend
+			console.log("Form submitted:", formState);
+			setIsSubmitting(true);
+			const result = await axios.post("/sleecetech/messages", { formState });
+			console.log(result);
+			// Reset form after submission
+			setFormState({ name: "", email: "", subject: "", message: "" });
+			// You might also want to show a success message to the user
+		} catch (error) {
+			setError(true);
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 
 	return (
@@ -103,7 +115,7 @@ export default function ContactUsPage() {
 										/>
 									</div>
 									<Button type="submit" className="w-full">
-										Send Message
+										{isSubmitting ? "Sending..." : "Send Message"}
 									</Button>
 								</form>
 							</CardContent>
