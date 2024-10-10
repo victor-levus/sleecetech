@@ -62,6 +62,7 @@ const MenuList = () => {
 	const path = usePathname();
 
 	const menuList = [
+		{ label: "Home", href: "/" },
 		{ label: "About", href: "/about" },
 		{ label: "Services", href: "/services" },
 		{ label: "Our Team", href: "/teams" },
@@ -69,9 +70,9 @@ const MenuList = () => {
 		{ label: "Gallery", href: "/gallery" },
 	];
 
-	const linkStyle = `font-nanum text-lg font-extrabold hover:text-app-color ${
-		path === "/contact-us" ? "text-app-color" : "text-app-color2"
-	}`;
+	// const linkStyle = `font-nanum text-lg font-extrabold hover:text-app-color ${
+	// 	path === "/contact-us" ? "text-app-color" : "text-app-color2"
+	// }`;
 
 	return (
 		<div className="mt-8 gap-5 flex flex-col mr-5 items-end md:flex-row ">

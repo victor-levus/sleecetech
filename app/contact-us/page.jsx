@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import axios from "axios";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -9,12 +10,16 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import HeaderText from "@/components/HeaderText";
-import Footer from "@/components/Footer";
+import { IoClose } from "react-icons/io5";
 
 export default function ContactUsPage() {
+	const [isSubmitting, setIsSubmitting] = useState(false);
+	const [error, setError] = useState("");
+	const [successNotification, setSuccessNotification] = useState(false);
 	const [formState, setFormState] = useState({
 		name: "",
 		email: "",
+		phone: "",
 		subject: "",
 		message: "",
 	});
@@ -24,13 +29,35 @@ export default function ContactUsPage() {
 		setFormState((prev) => ({ ...prev, [name]: value }));
 	};
 
-	const handleSubmit = (e) => {
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		// Here you would typically send the form data to your backend
-		console.log("Form submitted:", formState);
-		// Reset form after submission
-		setFormState({ name: "", email: "", subject: "", message: "" });
-		// You might also want to show a success message to the user
+		try {
+			// Here you would typically send the form data to your backend
+			setIsSubmitting(true);
+			setSuccessNotification(false);
+			await axios.post(process.env.BACKEND_URL, formState);
+			// Reset form after submission
+			setFormState({
+				name: "",
+				email: "",
+				phone: "",
+				subject: "",
+				message: "",
+			});
+			setError("");
+			// You might also want to show a success message to the user
+			setSuccessNotification(true);
+			setTimeout(() => {
+				setSuccessNotification(false);
+			}, 4000);
+		} catch (error) {
+			console.log(error);
+			error?.message === "Network Error"
+				? setError("Network Error")
+				: setError(error?.response?.data);
+		} finally {
+			setIsSubmitting(false);
+		}
 	};
 
 	return (
@@ -70,6 +97,9 @@ export default function ContactUsPage() {
 											onChange={handleInputChange}
 											required
 										/>
+										{error?.name && (
+											<p className="text-xs text-red-600">{error.name[0]}</p>
+										)}
 									</div>
 									<div>
 										<Label htmlFor="email">Email</Label>
@@ -81,6 +111,23 @@ export default function ContactUsPage() {
 											onChange={handleInputChange}
 											required
 										/>
+										{error?.email && (
+											<p className="text-xs text-red-600">{error.email[0]}</p>
+										)}
+									</div>
+									<div>
+										<Label htmlFor="phone">Phone</Label>
+										<Input
+											id="phone"
+											name="phone"
+											type="tel"
+											value={formState.phone}
+											onChange={handleInputChange}
+											required
+										/>
+										{error?.phone && (
+											<p className="text-xs text-red-600">{error.phone[0]}</p>
+										)}
 									</div>
 									<div>
 										<Label htmlFor="subject">Subject</Label>
@@ -91,6 +138,9 @@ export default function ContactUsPage() {
 											onChange={handleInputChange}
 											required
 										/>
+										{error?.subject && (
+											<p className="text-xs text-red-600">{error.subject[0]}</p>
+										)}
 									</div>
 									<div>
 										<Label htmlFor="message">Message</Label>
@@ -104,8 +154,30 @@ export default function ContactUsPage() {
 										/>
 									</div>
 									<Button type="submit" className="w-full">
-										Send Message
+										{isSubmitting ? "Sending..." : "Send Message"}
 									</Button>
+									{successNotification && (
+										<p className="flex items-center justify-between text-sm bg-lime-100 bg-opacity-50 px-3 py-2 rounded-lg">
+											Message sent successfully
+											<span
+												className="cursor-pointer text-red-700 text-xl"
+												onClick={() => setSuccessNotification(false)}
+											>
+												<IoClose />
+											</span>
+										</p>
+									)}
+									{error === "Network Error" && (
+										<p className="flex items-center justify-between text-sm bg-lime-100 bg-opacity-50 px-3 py-2 rounded-lg">
+											Error in connecting to the server
+											<span
+												className="cursor-pointer text-red-700 text-xl"
+												onClick={() => setError(false)}
+											>
+												<IoClose />
+											</span>
+										</p>
+									)}
 								</form>
 							</CardContent>
 						</Card>
@@ -124,7 +196,7 @@ export default function ContactUsPage() {
 							<CardContent className="space-y-4">
 								<div className="flex items-center space-x-4">
 									<MapPin className="text-primary" />
-									<span>Plot 2157 B07 Cadastral Zone Kamtape Abuja FCT</span>
+									<span>4 Tamale Street Wuse Zone 3 Abuja Nigeria</span>
 								</div>
 								<div className="flex items-center space-x-4">
 									<Phone className="text-primary" />
@@ -132,7 +204,7 @@ export default function ContactUsPage() {
 								</div>
 								<div className="flex items-center space-x-4">
 									<Mail className="text-primary" />
-									<span>info@sleecetechnologies.com.ng</span>
+									<span>info@sleecetechnologies.com</span>
 								</div>
 								<div className="flex items-center space-x-4">
 									<Clock className="text-primary" />
@@ -148,13 +220,13 @@ export default function ContactUsPage() {
 							<CardContent>
 								<div className="aspect-video relative rounded-md overflow-hidden">
 									<iframe
-										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2073.283570069771!2d7.47004264286761!3d9.09911402214506!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0b17bda1d00b%3A0xe8d76aaf46002194!2skatampe%20main!5e0!3m2!1sen!2sng!4v1727414371063!5m2!1sen!2sng"
+										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2736.6526394030698!2d7.467570368673695!3d9.057091255657218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0bcc25a36d41%3A0x68cbc4be2f2090de!2s(NIN)%20National%20Identification%20Number%20Registration%20Enrollment%20Centre%20Powered%20by%20PayChex!5e0!3m2!1sen!2sng!4v1727263701169!5m2!1sen!2sng"
 										width="100%"
 										height="100%"
 										style={{ border: 0 }}
-										allowFullScreen=""
+										allowfullscreen=""
 										loading="lazy"
-										referrerPolicy="no-referrer-when-downgrade"
+										referrerpolicy="no-referrer-when-downgrade"
 									></iframe>
 								</div>
 							</CardContent>
@@ -162,8 +234,6 @@ export default function ContactUsPage() {
 					</motion.div>
 				</div>
 			</div>
-
-			<Footer />
 		</div>
 	);
 }
