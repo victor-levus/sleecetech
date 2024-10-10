@@ -43,6 +43,7 @@ const ContactSection = () => {
 			});
 			setError("");
 			// You might also want to show a success message to the user
+
 			setSuccessNotification(true);
 
 			setTimeout(() => {
@@ -57,6 +58,8 @@ const ContactSection = () => {
 			setIsSubmitting(false);
 		}
 	};
+
+	console.log("env: ", process.env.BACKEND_URL);
 
 	return (
 		<section className="contact--section p-5 my-10">
