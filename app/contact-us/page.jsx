@@ -197,7 +197,7 @@ export default function ContactUsPage() {
 							<CardContent className="space-y-4">
 								<div className="flex items-center space-x-4">
 									<MapPin className="text-primary" />
-									<span>4 Tamale Street Wuse Zone 3 Abuja Nigeria</span>
+									<span>Plot 2157 B07 Cadastral Zone Kamtape Abuja FCT</span>
 								</div>
 								<div className="flex items-center space-x-4">
 									<Phone className="text-primary" />
@@ -205,7 +205,7 @@ export default function ContactUsPage() {
 								</div>
 								<div className="flex items-center space-x-4">
 									<Mail className="text-primary" />
-									<span>info@sleecetechnologies.com</span>
+									<span>info@sleecetechnologies.com.ng</span>
 								</div>
 								<div className="flex items-center space-x-4">
 									<Clock className="text-primary" />
@@ -221,7 +221,7 @@ export default function ContactUsPage() {
 							<CardContent>
 								<div className="aspect-video relative rounded-md overflow-hidden">
 									<iframe
-										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2736.6526394030698!2d7.467570368673695!3d9.057091255657218!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0bcc25a36d41%3A0x68cbc4be2f2090de!2s(NIN)%20National%20Identification%20Number%20Registration%20Enrollment%20Centre%20Powered%20by%20PayChex!5e0!3m2!1sen!2sng!4v1727263701169!5m2!1sen!2sng"
+										src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d10598.943698161833!2d7.473732106799257!3d9.094810698359245!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2s!5e0!3m2!1sen!2sng!4v1728641306783!5m2!1sen!2sng"
 										width="100%"
 										height="100%"
 										style={{ border: 0 }}
