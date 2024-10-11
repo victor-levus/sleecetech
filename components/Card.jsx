@@ -1,5 +1,6 @@
 import React from "react";
-import Button from "./Button";
+import { Button } from "./ui/button";
+import Link from "next/link";
 
 const Card = ({ title, subTitle, image }) => {
 	return (
@@ -22,9 +23,9 @@ const Card = ({ title, subTitle, image }) => {
 				</p>
 			</div>
 			<div className="p-6 pt-0">
-				<Button href="/services" fullWidth>
-					Learn More
-				</Button>
+				<Link href="/services">
+					<Button>Learn More</Button>
+				</Link>
 			</div>
 		</div>
 	);
