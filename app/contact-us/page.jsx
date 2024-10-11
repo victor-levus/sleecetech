@@ -11,6 +11,7 @@ import { Label } from "@/components/ui/label";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import HeaderText from "@/components/HeaderText";
 import { IoClose } from "react-icons/io5";
+import Footer from "@/components/Footer";
 
 export default function ContactUsPage() {
 	const [isSubmitting, setIsSubmitting] = useState(false);
@@ -224,9 +225,9 @@ export default function ContactUsPage() {
 										width="100%"
 										height="100%"
 										style={{ border: 0 }}
-										allowfullscreen=""
+										allowFullScreen=""
 										loading="lazy"
-										referrerpolicy="no-referrer-when-downgrade"
+										referrerPolicy="no-referrer-when-downgrade"
 									></iframe>
 								</div>
 							</CardContent>
@@ -234,6 +235,8 @@ export default function ContactUsPage() {
 					</motion.div>
 				</div>
 			</div>
+
+			<Footer />
 		</div>
 	);
 }
