@@ -60,6 +60,7 @@ const AdminLayout = ({ children }) => {
 	const handleLogout = () => {
 		localStorage.removeItem("token");
 		router.push("/auth/login");
+		setLogoutConfirmBox(false);
 	};
 
 	if (!user && !error)
