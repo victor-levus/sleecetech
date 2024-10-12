@@ -14,7 +14,7 @@ export default function RootLayout({ children }) {
 		<html lang="en">
 			<body className={`${inter.className} bg-app-color bg-opacity-10`}>
 				<main className="mx-auto ">
-					<AdminLayout children={children} />
+					<AdminLayout>{children}</AdminLayout>
 				</main>
 			</body>
 		</html>
