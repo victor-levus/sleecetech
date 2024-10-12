@@ -7,6 +7,8 @@ import { IoClose } from "react-icons/io5";
 import TitleHead from "@/components/TitleHead";
 import { Button } from "@/components/ui/button";
 
+const url = process.env.BACKEND_URL + "sleecetech/messages/";
+
 const ContactSection = () => {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [error, setError] = useState("");
@@ -32,7 +34,7 @@ const ContactSection = () => {
 			// Here you would typically send the form data to your backend
 			setIsSubmitting(true);
 			setSuccessNotification(false);
-			await axios.post(process.env.BACKEND_URL, formState);
+			await axios.post(url, formState);
 			// Reset form after submission
 			setFormState({
 				name: "",

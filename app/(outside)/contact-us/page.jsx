@@ -13,6 +13,8 @@ import HeaderText from "@/components/HeaderText";
 import { IoClose } from "react-icons/io5";
 import Footer from "@/components/Footer";
 
+const url = process.env.BACKEND_URL + "sleecetech/messages/";
+
 export default function ContactUsPage() {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [error, setError] = useState("");
@@ -36,7 +38,7 @@ export default function ContactUsPage() {
 			// Here you would typically send the form data to your backend
 			setIsSubmitting(true);
 			setSuccessNotification(false);
-			await axios.post(process.env.BACKEND_URL, formState);
+			await axios.post(url, formState);
 			// Reset form after submission
 			setFormState({
 				name: "",

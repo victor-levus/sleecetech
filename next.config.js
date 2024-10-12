@@ -9,8 +9,7 @@ module.exports = {
 	},
 
 	env: {
-		BACKEND_URL:
-			"https://backendapiapp-f7e6af207af9.herokuapp.com/api/sleecetech/messages/",
+		BACKEND_URL: "https://backendapiapp-f7e6af207af9.herokuapp.com/api/",
 	},
 
 	images: {

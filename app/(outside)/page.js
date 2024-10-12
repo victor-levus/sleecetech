@@ -1,10 +1,10 @@
-import TitleHead from "../components/TitleHead";
-import Card from "../components/Card";
-import Button from "../components/Button";
+import TitleHead from "../../components/TitleHead";
+import Card from "../../components/Card";
+import Button from "../../components/Button";
 
-import { expertiseData, servicesData } from "../data/index";
+import { expertiseData, servicesData } from "../../data/index";
 import ContactSection from "./ContactSection";
-import Footer from "../components/Footer";
+import Footer from "../../components/Footer";
 
 export const metadata = {
 	title: "Sleece Technologies HomePage",
