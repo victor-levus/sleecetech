@@ -157,7 +157,10 @@ const AdminLayout = ({ children }) => {
 				</div>
 			</div>
 
-			<div className={`content-area ml-[${sidebarWidth}] w-full p-3`}>
+			<div
+				style={{ marginLeft: sidebarWidth }}
+				className={`content-area w-full p-3`}
+			>
 				<div className="flex justify-between mb-10">
 					<div className="flex items-center text-xl">
 						{
