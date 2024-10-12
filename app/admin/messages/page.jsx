@@ -56,6 +56,8 @@ const Messages = () => {
 			<h1 className="text-4xl font-bold mb-3 ">Recieved Messages</h1>
 			{isFetchingMessage ? (
 				<p>Loading...</p>
+			) : sortedMessage.length < 1 ? (
+				<p className="font-bold text-xl text-gray-800">No Message available</p>
 			) : (
 				<Paper sx={{ width: "100%" }} className="bg-neutral-100 ">
 					<DataGrid

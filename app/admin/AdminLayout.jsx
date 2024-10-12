@@ -103,7 +103,7 @@ const AdminLayout = ({ children }) => {
 		<div className="flex">
 			<div className={sidebarClassNames}>
 				<div className="flex h-[100%] w-full flex-col justify-start">
-					<h1 className="py-3 pl-3 font-bold text-gray-400">ADMIN LOGIN</h1>
+					<h1 className="py-3 pl-3 font-bold text-gray-400">ADMIN PANEL</h1>
 					{/* SIDEBAR LINKS */}
 					<div className="z-10 w-full">
 						{sidebarMenu.map((sm) => (
