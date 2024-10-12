@@ -10,7 +10,6 @@ const LoginPage = () => {
 	const router = useRouter();
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [error, setError] = useState("");
-	const [successNotification, setSuccessNotification] = useState(false);
 	const [formState, setFormState] = useState({
 		username: "",
 		password: "",
@@ -25,7 +24,6 @@ const LoginPage = () => {
 		e.preventDefault();
 		try {
 			setIsSubmitting(true);
-			setSuccessNotification(false);
 			const result = await login(formState);
 
 			if (result.status === 200) {
@@ -53,7 +51,7 @@ const LoginPage = () => {
 
 	return (
 		<div className="flex flex-col gap-5 items-center justify-center h-screen w-full bg-app-color bg-opacity-10">
-			<div>
+			<div className="p-3 w-full md:w-[600px]">
 				<div className="font-bold text-3xl font-nanum mb-10 text-app-color2">
 					Sleece Account Login
 				</div>
@@ -62,7 +60,7 @@ const LoginPage = () => {
 
 				<form
 					onSubmit={handleSubmit}
-					className="max-w-md mx-auto min-w-[500px] mb-5"
+					className="w-full mx-auto md:min-w-[500px] mb-5"
 				>
 					<div className="relative z-0 w-full mb-10 group">
 						<input
@@ -71,7 +69,7 @@ const LoginPage = () => {
 							name="username"
 							id="username"
 							placeholder=" "
-							className="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+							className="block py-2.5 px-1 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
 							value={formState.username}
 							required
 							autoComplete="off"
@@ -92,7 +90,7 @@ const LoginPage = () => {
 							name="password"
 							id="password"
 							value={formState.password}
-							className="block py-2.5 px-0 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+							className="block py-2.5 px-1 w-full text-lg text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
 							placeholder=" "
 							required
 							autoComplete="off"
