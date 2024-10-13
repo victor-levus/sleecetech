@@ -29,7 +29,7 @@ const lowerSidebarMenu = [
 ];
 
 const AdminLayout = ({ children }) => {
-	const logoutBox = useRef();
+	const logoutBox = useRef(null);
 	const router = useRouter();
 	const [user, setUser] = useState("");
 	const [error, setError] = useState("");
@@ -56,6 +56,22 @@ const AdminLayout = ({ children }) => {
 
 		fetchLoginUser();
 	}, []);
+
+	useEffect(() => {
+		const handleClickOutside = (event) => {
+			if (logoutBox.current && !logoutBox.current.contains(event.target)) {
+				setLogoutConfirmBox(false); // Close modal if the click is outside
+			}
+		};
+
+		// Attach event listener
+		document.addEventListener("mousedown", handleClickOutside);
+
+		// Cleanup the event listener on component unmount
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, [() => setLogoutConfirmBox(false)]);
 
 	const handleLogout = () => {
 		localStorage.removeItem("token");
@@ -158,6 +174,7 @@ const AdminLayout = ({ children }) => {
 				</div>
 			</div>
 
+			{/* CONTENT AREA */}
 			<div
 				style={{ marginLeft: sidebarWidth }}
 				className={`content-area w-full p-3`}
