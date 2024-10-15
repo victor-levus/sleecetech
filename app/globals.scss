@@ -21,8 +21,12 @@
 	}
 }
 
+html,
 body {
+	max-width: 100%;
+	overflow-x: hidden;
 	padding: 0;
+	box-sizing: border-box;
 	/* background: rgb(248, 248, 248); */
 }
 
