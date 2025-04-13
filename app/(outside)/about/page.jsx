@@ -128,12 +128,12 @@ export default function About() {
 					</h2>
 					<div className="grid md:grid-cols-3 gap-8">
 						{[
-							"Artificial Intelligence",
-							"Internet of Things",
-							"Cloud Computing",
-							"Cybersecurity",
-							"Data Analytics",
-							"Mobile App Development",
+							"ICT Consulting",
+							"IT Infrastructure",
+							"Networking",
+							"Power Solutions",
+							"Software Development",
+							"ICT Training",
 						].map((expertise, index) => (
 							<motion.div
 								key={index}

@@ -16,6 +16,7 @@ import {
 	BiSolidEnvelope,
 } from "react-icons/bi";
 import { BsFillGeoAltFill } from "react-icons/bs";
+import Image from "next/image";
 
 const Footer = () => {
 	return (
@@ -23,7 +24,12 @@ const Footer = () => {
 			<div className="app---footer">
 				<div className="footer---bottom first">
 					<Link href="/">
-						<img src={AppLogo} alt="app-logo" className="w-[100px] h-[]" />
+						<Image
+							src="/assets/icons/logo.png"
+							width={240}
+							height={1}
+							style={{ mixBlendMode: "multiply", color: "white" }}
+						/>
 					</Link>
 					<p className="mt-4">
 						Sleece Technologies Limited is a dynamic IT firm dedicated to
