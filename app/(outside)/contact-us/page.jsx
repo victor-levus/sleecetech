@@ -123,7 +123,7 @@ export default function ContactUsPage() {
 										<Input
 											id="phone"
 											name="phone"
-											type="tel"
+											type="text"
 											value={formState.phone}
 											onChange={handleInputChange}
 											required

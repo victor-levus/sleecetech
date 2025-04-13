@@ -9,6 +9,8 @@ import { Button } from "@/components/ui/button";
 
 const url = process.env.BACKEND_URL + "sleecetech/messages/";
 
+console.log(url);
+
 const ContactSection = () => {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [error, setError] = useState("");
@@ -122,7 +124,7 @@ const ContactSection = () => {
 							</label>
 							<input
 								className="mt-1 p-2 w-full bg-app-color bg-opacity-30 border border-app-color border-opacity-45 rounded-md text-white"
-								type="tel"
+								type="text"
 								name="phone"
 								value={formState.phone}
 								onChange={handleInputChange}

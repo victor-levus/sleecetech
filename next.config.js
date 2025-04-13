@@ -9,7 +9,7 @@ module.exports = {
 	},
 
 	env: {
-		BACKEND_URL: "https://backendapiapp-f7e6af207af9.herokuapp.com/api/",
+		BACKEND_URL: "https://api.betcodes.space/api/",
 	},
 
 	images: {
